@@ -26,4 +26,4 @@ Then visit `http://localhost:8000`.
 - **Inventory**: vehicle cards live directly in `inventory.html` (and a few featured ones in `index.html`); each card carries `data-make`, `data-type`, and `data-price` attributes used by the filter bar in `js/main.js`.
 - **Contact form**: submissions are sent via [FormSubmit](https://formsubmit.co) to the address in the form's `data-endpoint` attribute in `contact.html` — update that email to your real business inbox. The first submission after changing the address triggers a one-time confirmation email from FormSubmit that must be clicked before messages start arriving. No account or API key required; it's free for this volume of traffic.
 - **Photos**: vehicle and hero images are placeholder SVG icons. Replace the `.vehicle-photo` / `.hero-visual` blocks with real `<img>` tags once you have photography.
-- **Map**: `contact.html` embeds a generic Google Maps search for "Aspen, CO" — swap in your real address once available.
+- **Map**: `contact.html` embeds a Google Maps search for the business address — update the query in the iframe `src` if the address changes.
