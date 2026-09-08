@@ -24,6 +24,6 @@ Then visit `http://localhost:8000`.
 - **Colors/fonts**: edit the CSS variables at the top of `css/style.css`.
 - **Business info**: phone, address, email, and hours are repeated in the header/footer of each page — update all instances.
 - **Inventory**: vehicle cards live directly in `inventory.html` (and a few featured ones in `index.html`); each card carries `data-make`, `data-type`, and `data-price` attributes used by the filter bar in `js/main.js`.
-- **Contact form**: `js/main.js` currently only shows a client-side success message — there is no backend wired up. To actually receive submissions, connect the form to an email/form service (e.g. Formspree, Netlify Forms) or your own backend.
+- **Contact form**: submissions are sent via [FormSubmit](https://formsubmit.co) to the address in the form's `data-endpoint` attribute in `contact.html` — update that email to your real business inbox. The first submission after changing the address triggers a one-time confirmation email from FormSubmit that must be clicked before messages start arriving. No account or API key required; it's free for this volume of traffic.
 - **Photos**: vehicle and hero images are placeholder SVG icons. Replace the `.vehicle-photo` / `.hero-visual` blocks with real `<img>` tags once you have photography.
 - **Map**: `contact.html` embeds a generic Google Maps search for "Aspen, CO" — swap in your real address once available.

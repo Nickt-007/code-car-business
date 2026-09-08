@@ -59,8 +59,10 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
   const status = document.getElementById('form-status');
+  const endpoint = form.dataset.endpoint;
+  const submitBtn = form.querySelector('button[type="submit"]');
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (!form.checkValidity()) {
@@ -69,9 +71,29 @@ function initContactForm() {
     }
 
     const name = form.querySelector('#name').value.trim();
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    status.className = 'form-status';
 
-    status.textContent = `Thanks, ${name}! Your message has been received. A member of our team will reach out shortly.`;
-    status.className = 'form-status success';
-    form.reset();
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+
+      if (!response.ok) throw new Error('Request failed');
+
+      status.textContent = `Thanks, ${name}! Your message has been received. A member of our team will reach out shortly.`;
+      status.className = 'form-status success';
+      form.reset();
+    } catch (err) {
+      status.textContent = "Sorry, something went wrong sending your message. Please call us at (970) 555-0142 or try again in a moment.";
+      status.className = 'form-status error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
   });
 }
