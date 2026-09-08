@@ -89,7 +89,7 @@ function initContactForm() {
       status.className = 'form-status success';
       form.reset();
     } catch (err) {
-      status.textContent = "Sorry, something went wrong sending your message. Please call us at (970) 555-0142 or try again in a moment.";
+      status.textContent = "Sorry, something went wrong sending your message. Please call us at (973) 841-7937 or try again in a moment.";
       status.className = 'form-status error';
     } finally {
       submitBtn.disabled = false;
