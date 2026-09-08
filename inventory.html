@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory | Aspen Auto</title>
+  <meta name="description" content="Browse Aspen Auto's full inventory of quality pre-owned sedans, SUVs, trucks, and coupes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-links">
+          <a href="tel:19705550142">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (970) 555-0142
+          </a>
+          <span>Mon–Sat: 9AM–7PM</span>
+        </div>
+        <div class="top-bar-links">
+          <span>123 Main Street, Aspen, CO 81611</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="mark">AA</span>
+        Aspen <span class="accent">Auto</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-primary">Get Pre-Approved</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Our Inventory</h1>
+      <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Inventory</div>
+    </div>
+  </div>
+
+  <main>
+    <section>
+      <div class="container">
+
+        <div class="filter-bar">
+          <div class="filter-field">
+            <label for="filter-make">Make</label>
+            <select id="filter-make">
+              <option value="all">All Makes</option>
+              <option value="toyota">Toyota</option>
+              <option value="ford">Ford</option>
+              <option value="subaru">Subaru</option>
+              <option value="honda">Honda</option>
+              <option value="jeep">Jeep</option>
+              <option value="chevrolet">Chevrolet</option>
+              <option value="bmw">BMW</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="filter-type">Body Type</label>
+            <select id="filter-type">
+              <option value="all">All Types</option>
+              <option value="sedan">Sedan</option>
+              <option value="suv">SUV</option>
+              <option value="truck">Truck</option>
+              <option value="coupe">Coupe</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="filter-price">Max Price: <span id="price-value">$60,000</span></label>
+            <input type="range" id="filter-price" min="10000" max="60000" step="1000" value="60000"
+              oninput="document.getElementById('price-value').textContent = '$' + Number(this.value).toLocaleString()">
+          </div>
+        </div>
+
+        <div class="results-meta">
+          <span id="results-count">9 vehicles found</span>
+          <span>Sorted by: Newest Arrivals</span>
+        </div>
+
+        <div class="grid grid-3" id="inventory-grid">
+
+          <div class="card" data-vehicle data-make="toyota" data-type="sedan" data-price="21995">
+            <div class="vehicle-photo">
+              <span class="badge">Certified</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M6.5 16.5h.01M17.5 16.5h.01"/></svg>
+            </div>
+            <div class="vehicle-info">
+              <h3>2021 Toyota Camry SE</h3>
+              <div class="vehicle-meta"><span>32,410 mi</span><span>Sedan</span><span>Automatic</span></div>
+              <div class="vehicle-price">$21,995 <span>or $329/mo est.</span></div>
+              <a href="contact.html" class="btn btn-outline btn-block">Inquire Now</a>
+            </div>
+          </div>
+
+          <div class="card" data-vehicle data-make="ford" data-type="truck" data-price="28750">
+            <div class="vehicle-photo">
+              <span class="badge">Low Mileage</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M6.5 16.5h.01M17.5 16.5h.01"/></svg>
+            </div>
+            <div class="vehicle-info">
+              <h3>2020 Ford F-150 XLT</h3>
+              <div class="vehicle-meta"><span>41,200 mi</span><span>Truck</span><span>4WD</span></div>
+              <div class="vehicle-price">$28,750 <span>or $421/mo est.</span></div>
+              <a href="contact.html" class="btn btn-outline btn-block">Inquire Now</a>
+            </div>
+          </div>
+
+          <div class="card" data-vehicle data-make="subaru" data-type="suv" data-price="26480">
+            <div class="vehicle-photo">
+              <span class="badge">Fan Favorite</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M6.5 16.5h.01M17.5 16.5h.01"/></svg>
+            </div>
+            <div class="vehicle-info">
+              <h3>2022 Subaru Outback</h3>
+              <div class="vehicle-meta"><span>19,830 mi</span><span>SUV</span><span>AWD</span></div>
+              <div class="vehicle-price">$26,480 <span>or $389/mo est.</span></div>
+              <a href="contact.html" class="btn btn-outline btn-block">Inquire Now</a>
+            </div>
+          </div>
+
+          <div class="card" data-vehicle data-make="honda" data-type="sedan" data-price="18990">
+            <div class="vehicle-photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M6.5 16.5h.01M17.5 16.5h.01"/></svg>
+            </div>
+            <div class="vehicle-info">
+              <h3>2019 Honda Accord LX</h3>
+              <div class="vehicle-meta"><span>52,600 mi</span><span>Sedan</span><span>Automatic</span></div>
+              <div class="vehicle-price">$18,990 <span>or $279/mo est.</span></div>
+              <a href="contact.html" class="btn btn-outline btn-block">Inquire Now</a>
+            </div>
+          </div>
+
+          <div class="card" data-vehicle data-make="jeep" data-type="suv" data-price="24300">
+            <div class="vehicle-photo">
+              <span class="badge">Certified</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M6.5 16.5h.01M17.5 16.5h.01"/></svg>
+            </div>
+            <div class="vehicle-info">
+              <h3>2020 Jeep Wrangler Sport</h3>
+              <div class="vehicle-meta"><span>38,120 mi</span><span>SUV</span><span>4WD</span></div>
+              <div class="vehicle-price">$24,300 <span>or $359/mo est.</span></div>
+              <a href="contact.html" class="btn btn-outline btn-block">Inquire Now</a>
+            </div>
+          </div>
+
+          <div class="card" data-vehicle data-make="chevrolet" data-type="truck" data-price="31200">
+            <div class="vehicle-photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M6.5 16.5h.01M17.5 16.5h.01"/></svg>
+            </div>
+            <div class="vehicle-info">
+              <h3>2021 Chevrolet Silverado LT</h3>
+              <div class="vehicle-meta"><span>29,450 mi</span><span>Truck</span><span>4WD</span></div>
+              <div class="vehicle-price">$31,200 <span>or $459/mo est.</span></div>
+              <a href="contact.html" class="btn btn-outline btn-block">Inquire Now</a>
+            </div>
+          </div>
+
+          <div class="card" data-vehicle data-make="bmw" data-type="coupe" data-price="34900">
+            <div class="vehicle-photo">
+              <span class="badge">Luxury</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M6.5 16.5h.01M17.5 16.5h.01"/></svg>
+            </div>
+            <div class="vehicle-info">
+              <h3>2019 BMW 4 Series 430i</h3>
+              <div class="vehicle-meta"><span>27,980 mi</span><span>Coupe</span><span>RWD</span></div>
+              <div class="vehicle-price">$34,900 <span>or $512/mo est.</span></div>
+              <a href="contact.html" class="btn btn-outline btn-block">Inquire Now</a>
+            </div>
+          </div>
+
+          <div class="card" data-vehicle data-make="toyota" data-type="suv" data-price="29650">
+            <div class="vehicle-photo">
+              <span class="badge">Certified</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M6.5 16.5h.01M17.5 16.5h.01"/></svg>
+            </div>
+            <div class="vehicle-info">
+              <h3>2022 Toyota RAV4 XLE</h3>
+              <div class="vehicle-meta"><span>16,900 mi</span><span>SUV</span><span>AWD</span></div>
+              <div class="vehicle-price">$29,650 <span>or $436/mo est.</span></div>
+              <a href="contact.html" class="btn btn-outline btn-block">Inquire Now</a>
+            </div>
+          </div>
+
+          <div class="card" data-vehicle data-make="honda" data-type="coupe" data-price="23100">
+            <div class="vehicle-photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M6.5 16.5h.01M17.5 16.5h.01"/></svg>
+            </div>
+            <div class="vehicle-info">
+              <h3>2021 Honda Civic Si</h3>
+              <div class="vehicle-meta"><span>24,300 mi</span><span>Coupe</span><span>Manual</span></div>
+              <div class="vehicle-price">$23,100 <span>or $340/mo est.</span></div>
+              <a href="contact.html" class="btn btn-outline btn-block">Inquire Now</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="no-results" id="no-results">
+          <h3 style="text-transform:none; margin-bottom:10px;">No vehicles match your filters</h3>
+          <p>Try adjusting your search or <a href="contact.html" style="color:var(--gold);">contact us</a> &mdash; we may have something arriving soon.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Don't See What You're Looking For?</h2>
+        <p>New inventory arrives weekly. Let us know what you want and we'll help you find it.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary">Request a Vehicle</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom:16px;">
+            <span class="mark">AA</span> Aspen <span class="accent">Auto</span>
+          </a>
+          <p>Quality pre-owned vehicles, honest service, and financing for every budget. Serving the Roaring Fork Valley since 2011.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>123 Main Street<br>Aspen, CO 81611</li>
+            <li><a href="tel:19705550142">(970) 555-0142</a></li>
+            <li><a href="mailto:info@aspenauto.example">info@aspenauto.example</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon &ndash; Fri: 9AM &ndash; 7PM</li>
+            <li>Saturday: 10AM &ndash; 5PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> Aspen Auto. All rights reserved.</span>
+        <span>Designed for Aspen Auto</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
